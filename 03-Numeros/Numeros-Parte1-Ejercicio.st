@@ -1,4 +1,4 @@
-!classDefinition: #NumeroTest category: 'Numeros-Parte1-Ejercicio'!
+!classDefinition: #NumeroTest category: #'Numeros-Parte1-Ejercicio'!
 TestCase subclass: #NumeroTest
 	instanceVariableNames: 'zero one two four oneFifth oneHalf five twoFifth twoTwentyfifth fiveHalfs three eight negativeOne negativeTwo'
 	classVariableNames: ''
@@ -128,40 +128,38 @@ setUp
 	! !
 
 
-!classDefinition: #Numero category: 'Numeros-Parte1-Ejercicio'!
+!classDefinition: #Numero category: #'Numeros-Parte1-Ejercicio'!
 Object subclass: #Numero
 	instanceVariableNames: 'type value numerator denominator'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Numeros-Parte1-Ejercicio'!
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'LL 11/7/2020 18:50:54'!
+!Numero methodsFor: 'arithmetic operations' stamp: 'LL 9/13/2020 16:33:53'!
 * aMultiplier 
 
 	type = #Entero ifTrue:	
-		[ aMultiplier type = #Entero ifTrue: [ ^self class with: value * aMultiplier integerValue ] ].
+		[ ^self class with: value * aMultiplier integerValue ].
 		
 	type = #Fraccion ifTrue:
-		[ aMultiplier type = #Fraccion ifTrue: [ ^self class with: (numerator * aMultiplier numerator) over: (denominator * aMultiplier denominator) ] ].
+		[ ^self class with: (numerator * aMultiplier numerator) over: (denominator * aMultiplier denominator) ].
 		
 	self error: 'Tipo de número no soportado'
 	! !
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'LL 11/7/2020 18:53:18'!
+!Numero methodsFor: 'arithmetic operations' stamp: 'LL 9/13/2020 16:35:06'!
 + anAdder 
 	
 	type = #Entero ifTrue:
-		[ anAdder type = #Entero ifTrue: [ ^self class with: value + anAdder integerValue ] ].
+		[ ^self class with: value + anAdder integerValue ].
 	
 	type = #Fraccion ifTrue:
-		[ anAdder type = #Fraccion ifTrue: [
-			| newNumerator newDenominator |
+		[ | newNumerator newDenominator |
 		
-			newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
-			newDenominator := denominator * anAdder denominator.
-			
-			^ self class with: newNumerator over: newDenominator ] 
-		].
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+		
+		^ self class with: newNumerator over: newDenominator ].
 	
 	self error: 'Tipo de número no soportado'
 	! !
@@ -293,7 +291,7 @@ greatestCommonDivisorWith: anEntero
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'Numero class' category: 'Numeros-Parte1-Ejercicio'!
+!classDefinition: 'Numero class' category: #'Numeros-Parte1-Ejercicio'!
 Numero class
 	instanceVariableNames: ''!
 
