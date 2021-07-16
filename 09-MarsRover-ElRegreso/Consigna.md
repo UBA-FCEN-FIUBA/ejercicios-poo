@@ -10,7 +10,7 @@ Notar que, a diferencia del *log*, donde van quedando todos los cambios registra
 
 Es necesario que la solución soporte que solo se esté usando el log, sólo la ventana o ambos.
 
-Dado que van se planea hacer agregar en el futuro inmediato otras, nuestra solución deberá cumplir con las siguientes restricciones:
+Dado que se planea seguir extendiendo los sistemas de seguimiento, nuestra solución deberá cumplir con las siguientes restricciones:
 
 1. Debe ser posible agregar otras maneras de hacer seguimiento, como mandar mensajes a un micro-servicio o grabar la información en una base de datos sin modificar el código existente.
 
@@ -18,6 +18,6 @@ Dado que van se planea hacer agregar en el futuro inmediato otras, nuestra soluc
 
 3. Al igual que con la ventana y el log, se debe poder utilizar múltiples formas de seguimiento al mismo tiempo, así como poder seguir cambios de múltiples colaboradores internos de forma independiente o en conjunto.
 
-Construir esta funcionalidad mediante TDD en base a la solución de la cátedra del Mars Rover.
+Implementar la solución haciendo TDD. Deben partir del código de la solución del Mars Rover anterior, ya sea el realizado por ustedes o a partir de la solución provista por la cátedra.
 
 **Aclaración:** No es necesario que la ventana se dibuje realmente en pantalla, alcanza con tener un objeto que la represente. Respecto al archivo no es necesario que se persista de disco.
